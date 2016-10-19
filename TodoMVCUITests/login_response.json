@@ -1,0 +1,15 @@
+{
+    "error":null,
+    "data":{
+        "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySUQiOiI1N2ZmODk3ZDgyNDZjYTE0MGIzMDhlNjkiLCJpYXQiOiIyMDE2LTEwLTE5VDA2OjUwOjIzLjIzMFoifQ.1Lfoz9gATZYhK9A6n0_3LPkdU6F8sUUqFw4Acfsd4jw",
+        "user":{
+            "_id":"57ff897d8246ca140b308e69",
+            "username":"u@t.com",
+            "__v":2,
+            "todos":[
+                     "5805c6078246ca140b308e6a",
+                     "5805ce638246ca140b308e6b"
+                     ]
+        }
+    }
+}

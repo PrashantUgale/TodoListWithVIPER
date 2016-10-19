@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import SBTUITestTunnel
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        SBTUITestTunnelServer.takeOff()
+        
         // Override point for customization after application launch.
         let loginController = LoginViewController(nibName: "LoginViewController", bundle: nil)
         let navigationController = UINavigationController(rootViewController: loginController)

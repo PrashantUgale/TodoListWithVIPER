@@ -33,7 +33,7 @@ class TodoCreatePresenter: ITodoCreatePresenter {
         
         todoView?.startLoading()
         self.service?.addNewToDo(textValue, onCompletionSuccess: { [weak self] (response) in
-            self?.todoView?.startLoading()
+            self?.todoView?.stopLoading()
             self?.wireframe?.goBack()
             }, onCompletionFailure: { [weak self] (message) in
                 self?.todoView?.stopLoading()

@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
     }
     
     func touchDone() {
-        
+        validateAndLogin()
     }
     
     func validateAndLogin() {

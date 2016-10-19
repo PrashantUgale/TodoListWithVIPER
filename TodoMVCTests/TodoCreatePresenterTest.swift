@@ -72,13 +72,16 @@ class TodoCreatePresenterTest: QuickSpec {
                 
             }
             
-            it("Add valid note") {
+            it("Add valid todo") {
                 let todoViewMock = CreateTodoViewMock()
                 let wireframeMock = WireframeMock()
                 let networkManagerMock = NetworkManagerMock()
-                
-                networkManagerMock.registerStub("addNewTodo", returns: { _ -> (Bool, String) in
-                    return (true, "Note added successfully")
+
+                networkManagerMock.registerStub("addNewTodo", returns: { args -> Void in
+                    let (_, success, _) = args[0] as! (String, (AnyObject?) -> Void, (String?) -> Void)
+                    success(nil)
+//                    message
+//                    failure("failed")
                 })
                 
                 let presenter = TodoCreatePresenter(view: todoViewMock, wireframe: wireframeMock, service: networkManagerMock)
@@ -87,9 +90,7 @@ class TodoCreatePresenterTest: QuickSpec {
                 expect(todoViewMock.invocations).to(contain("startLoading()"))
                 expect(todoViewMock.invocations).to(contain("stopLoading()"))
                 expect(wireframeMock.invocations).to(contain("goBack()"))
-                
             }
-
         }
     }
     
